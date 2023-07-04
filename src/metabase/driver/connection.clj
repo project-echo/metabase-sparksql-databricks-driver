@@ -39,13 +39,5 @@
   [impl]
   (decorator
     java.sql.Connection
-    impl
-    (getHoldability
-      []
-      ResultSet/CLOSE_CURSORS_AT_COMMIT)
-    (setReadOnly
-      [read-only?]
-      (when (.isClosed this)
-        (throw (SQLException. "Connection is closed")))
-      (when read-only?
-        (throw (SQLException. "Enabling read-only mode is not supported"))))))
+   impl
+  ))
