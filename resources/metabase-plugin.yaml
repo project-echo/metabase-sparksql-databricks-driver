@@ -38,4 +38,4 @@ init:
   - step: load-namespace
     namespace: metabase.driver.sparksql-databricks
   - step: register-jdbc-driver
-    class: metabase.driver.FixedSparkDriver
+    class: com.databricks.client.jdbc.Driver

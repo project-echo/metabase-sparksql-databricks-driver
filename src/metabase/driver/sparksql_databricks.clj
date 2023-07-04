@@ -101,7 +101,7 @@
     :or   {host "localhost", port 10000, db "", jdbc-flags ""}
     :as   opts}]
   (merge
-   {:classname   "metabase.driver.FixedSparkDriver"
+   {:classname   "com.databricks.client.jdbc.Driver"
     :subprotocol "databricks"
     :subname     (str "//" host ":" port "/" db jdbc-flags)}
    (dissoc opts :host :port :db :jdbc-flags)))
